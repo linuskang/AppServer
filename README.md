@@ -1,6 +1,6 @@
 # app.linuskang.au
 
-steps to run app server:
+steps to run app services:
 
 1. clone repo
 2. install libaries with ``npm install``

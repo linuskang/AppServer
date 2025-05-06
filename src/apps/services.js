@@ -21,7 +21,7 @@ function runSystemctlCommand(action, service, res, req, apikey) {
         return res.status(403).json({ error: 'Invalid API key' });
     }
 
-    const cmd = `systemctl ${action} ${service}`;
+    const cmd = `sudo systemctl ${action} ${service}`;
     log.info(`Received ${action} request from ${req.ip} for service: ${service}`);
 
     exec(cmd, (error, stdout, stderr) => {

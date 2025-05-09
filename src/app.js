@@ -8,6 +8,7 @@ const { logger } = require('./utils/winston');
 const log = logger();
 const staticRoutes = require('./routes/static');
 const apiRoutes = require('./routes/api');
+const services = require('../App Services/services');
 
 app.use(express.static(path.join(__dirname, 'src', 'public')));
 app.use(express.json());
@@ -18,19 +19,12 @@ app.use((req, res, next) => {
 });
 app.use(staticRoutes);
 app.use('/v1', apiRoutes);
-
-// Apps
-const rblx = require('./apps/rblx-webhooks.js');
-const serviceRoutes = require('./apps/services.js');
-app.use('/services', serviceRoutes);
-app.use('/rblx', rblx);
-
+services(app);
 app.use((err, req, res, next) => {
     const ip =req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket.remoteAddress;
     log.error(`[server] Error from ${ip}: ${err.message}`);
     res.status(500).send('Internal Server Error. Please try again later.');
 });
-
 app.use((req, res) => {
     res.status(404).send('404 Not Found');
 });

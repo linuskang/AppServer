@@ -1,7 +1,7 @@
 const express = require('express');
 const { exec } = require('child_process');
 const router = express.Router();
-const { logger } = require('../utils/winston');
+const { logger } = require('../../src/utils/winston');
 const log = logger();
 
 router.use((req, res, next) => {

@@ -4,14 +4,10 @@ const router = express.Router();
 const { logger } = require('../../src/utils/winston');
 const log = logger();
 
-log.info("DayScope online services loaded.");
+log.info("Linus Online Services loaded.");
 
 router.get('/', (req, res) => {
-    res.json({ service_name: 'DayScope Online Services', status: 'OK' });
-});
-
-router.get('/send', (req, res) => {
-    res.json({ service_name: 'DayScope Online Services', status: 'Sent!' });
+    res.json({ service_name: 'Linus Online Services', status: '200 OK', version: '1.0.0' });
 });
 
 module.exports = router;

@@ -23,6 +23,11 @@ const AppServices = [
         location: "SystemController/main.js",
         path: "services"
     },
+    {
+        name: "BloggerOnlineServices",
+        location: "BloggerOnlineServices/main.js",
+        path: "bos"
+    },
 ];
 
 const loadServices = (app) => {

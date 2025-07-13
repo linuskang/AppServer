@@ -4,30 +4,15 @@ const log = logger();
 
 const AppServices = [
     {
-        name: "DayScope",
-        location: "DayScope/main.js",
-        path: "dayscope"
-    },
-    {
         name: "LinusOnlineServices",
         location: "LinusOnlineServices/main.js",
         path: "lkang"
     },
     {
-        name: "Roblox",
-        location: "Roblox/main.js",
-        path: "roblox"
-    },
-    {
-        name: "SystemController",
-        location: "SystemController/main.js",
-        path: "services"
-    },
-    {
         name: "BloggerOnlineServices",
         location: "BloggerOnlineServices/main.js",
         path: "bos"
-    },
+    }
 ];
 
 const loadServices = (app) => {

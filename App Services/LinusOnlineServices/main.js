@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 const { logger } = require('../../src/utils/winston');
-const { auth } = require('../../src/routes/middleware/sysauth');
+const { auth } = require('../../src/routes/middleware/auth');
 const log = logger();
 
 log.info("Linus Online Services loaded.");

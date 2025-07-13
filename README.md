@@ -1,8 +1,15 @@
-# app.linuskang.au v1.1
+# App Server
 
-steps to run app services:
+A micro-api server for running small backend functions.
 
-1. clone repo
-2. install libaries with ``npm install``
-3. start dev server with ``npm run dev``
-4. configure stuff inside the .env file
+## Getting Started
+
+```bash
+git clone https://github.com/linuskang/app.linuskang.au
+cd app.linuskang.au
+
+npm install
+npm run dev
+```
+
+> Make sure to configure ``.env`` or your App Server install may upon startup.

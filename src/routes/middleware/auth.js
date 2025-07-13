@@ -3,7 +3,7 @@ const { logger } = require('../../utils/winston');
 const log = logger();
 dotenv.config();
 const env = process.env;
-const apiToken = env.GENERAL_API_KEY;
+const apiToken = env.API_KEY;
 
 const auth = (req, res, next) => {
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;

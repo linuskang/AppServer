@@ -9,6 +9,7 @@ const log = logger();
 const staticRoutes = require('./routes/static');
 const apiRoutes = require('./routes/api');
 const services = require('../App Services/services');
+const cors = require('cors');
 
 app.use(express.static(path.join(__dirname, 'src', 'public')));
 app.use(express.json());
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use(staticRoutes);
+app.use(cors());
 app.use('/v1', apiRoutes);
 services(app);
 app.use((err, req, res, next) => {

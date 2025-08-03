@@ -12,6 +12,11 @@ const AppServices = [
         name: "BloggerOnlineServices",
         location: "BloggerOnlineServices/main.js",
         path: "bos"
+    },
+    {
+        name: "BleulegsOnlineServices",
+        location: "BleulegsInternalAPIs/main.js",
+        path: "bl"
     }
 ];
 

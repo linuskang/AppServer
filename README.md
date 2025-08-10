@@ -5,11 +5,14 @@ A micro-api server for running small backend functions.
 ## Getting Started
 
 ```bash
-git clone https://github.com/linuskang/app.linuskang.au
-cd app.linuskang.au
-
+git clone https://github.com/linuskang/AppServer
+cd AppServer
 npm install
-npm run dev
+
+cp .env.example .env # Edit configuration here
+
+npm run dev # Start server
 ```
 
-> Make sure to configure ``.env`` or your App Server install may upon startup.
+## License
+AppServer is a private project owned and maintained by Linus Kang. It is not to be used for personal or commercial use outside of LKANG STUDIO.

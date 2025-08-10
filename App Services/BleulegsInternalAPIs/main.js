@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
-const { logger } = require('../../src/utils/winston');
+const { logger } = require('../../App/Utils/winston');
 const log = logger();
 
 const NetDB = require('./NetDBManager/netdb');

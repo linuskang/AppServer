@@ -1,5 +1,5 @@
 const path = require('path');
-const { logger } = require('../src/utils/winston');
+const { logger } = require('../App/Utils/winston');
 const log = logger();
 
 const AppServices = [
@@ -7,11 +7,6 @@ const AppServices = [
         name: "LinusOnlineServices",
         location: "LinusOnlineServices/main.js",
         path: "lkang"
-    },
-    {
-        name: "BloggerOnlineServices",
-        location: "BloggerOnlineServices/main.js",
-        path: "bos"
     },
     {
         name: "BleulegsOnlineServices",
@@ -29,7 +24,7 @@ const loadServices = (app) => {
             log.info(`Loading service: ${service.name} at ${routePath}`);
             app.use(routePath, serviceModule);
         } catch (error) {
-            log.error(`Failed to load ${service.name} from ${servicePath}:`, error.message);
+            log.error(`Failed to load ${service.name} from ${servicePath}: ${error.message}`);
         }
     });
 };

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "echo \"Starting development server...\" && node src/app.js"
+    "dev": "node App/app.js"
   },
   "keywords": [],
   "author": "",

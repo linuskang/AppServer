@@ -27,11 +27,11 @@ app.use((err, req, res, next) => {
     log.error(`Error from ${ip}: ${err.message}`);
     res.status(500).send('Internal Server Error. Please try again later.');
 });
-app.use((res) => {
+app.use((req, res) => {
     res.status(404).send('404 Not Found');
 });
 
 app.listen(env.PORT, '0.0.0.0', () => {
     log.info(`🚀 AppServer running! Access at 0.0.0.0:${env.PORT}`);
-    log.info(`🌐 Server URL: ${env.SERVER_URL}`)
+    log.info(`🌐 Server URL: ${env.API_URL}`)
 });

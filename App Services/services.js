@@ -12,6 +12,11 @@ const AppServices = [
         name: "BleulegsOnlineServices",
         location: "BleulegsInternalAPIs/main.js",
         path: "bl"
+    },
+    {
+        name: "DownloadAPI",
+        location: "DownloadAPI/main.js",
+        path: "download"
     }
 ];
 

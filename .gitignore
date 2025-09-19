@@ -1,3 +1,5 @@
 node_modules/
 server.log
 .env
+App\ Services/*
+!App\ Services/ExampleService/

@@ -18,7 +18,7 @@ npm run dev # Start server
 
 Create a new entry inside of ``App Services/services.js`` with the following scaffold:
 
-```json
+```js
 {
     name: "Example Service",
     location: "ExampleService/main.js",
@@ -33,8 +33,8 @@ const { express, axios, router, log, auth } = require('../../App/Utils/modules')
 
 log.info("Example service initialized!");
 
-router.get('/', (req, res) => {
-    res.json('Hello world!');
+router.get('/protected', (req, res) => {
+    res.json('This is a protected endpoint!');
 });
 
 module.exports = router;

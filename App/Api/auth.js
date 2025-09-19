@@ -16,7 +16,7 @@ const auth = (req, res, next) => {
     }
 
     if (token !== `Bearer ${apiToken}`) {
-        log.error(`${ip} - ${route}: Invalid API Token`);
+        log.warn(`${ip} - ${route}: Invalid API Token`);
         return res.status(401).json({ message: 'Access Denied' });
     }
 

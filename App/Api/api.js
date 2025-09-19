@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.json({ AppServer: 'Linus Kang AppServer', Version: 'V2.1.0', Status: 'OK', Endpoints: [
+    res.json({ AppServer: 'Linus Kang AppServer', Version: 'V2.3.0', Status: 'OK', Endpoints: [
         { method: 'GET', path: '/v1', description: 'Information about AppServer' },
         { method: 'GET', path: '/', description: 'Homepage' },
         { method: 'GET', path: '/src/styles', description: 'Styling for homepage' }

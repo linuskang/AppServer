@@ -1,24 +1,22 @@
+/*===================================
+  Created by: Linus Kang
+  Last updated: 8/04/2025
+===================================*/
+
+// App Service Routes
+const AppServices = [
+    {
+        name: "Example Service",
+        location: "ExampleService/main.js",
+        path: "example"
+    }
+];
+
+// END OF CONFIGURATION // DO NOT EDIT BELOW THIS LINE //
+
 const path = require('path');
 const { logger } = require('../App/Utils/winston');
 const log = logger();
-
-const AppServices = [
-    {
-        name: "LinusOnlineServices",
-        location: "LinusOnlineServices/main.js",
-        path: "lkang"
-    },
-    {
-        name: "BleulegsOnlineServices",
-        location: "BleulegsInternalAPIs/main.js",
-        path: "bl"
-    },
-    {
-        name: "DownloadAPI",
-        location: "DownloadAPI/main.js",
-        path: "download"
-    }
-];
 
 const loadServices = (app) => {
     AppServices.forEach((service) => {

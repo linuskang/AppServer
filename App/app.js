@@ -1,16 +1,31 @@
+/*===================================
+  Created by: Linus Kang
+  Last updated: 19/09/2025
+===================================*/
+
+// Packages
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const app = express();
 const dotenv = require('dotenv');
+
+// Load environment variables
 dotenv.config();
 const env = process.env;
+
+// Logger
 const { logger } = require('./Utils/winston');
 const log = logger();
+
+// Routes
 const staticRoutes = require('./Api/pages');
 const apiRoutes = require('./Api/api');
-const services = require('../App Services/services');
-const cors = require('cors');
 
+// Micro services
+const services = require('../App Services/services');
+
+// Middleware and routes
 app.use(express.static(path.join(__dirname, 'App', 'Pub')));
 app.use(express.json());
 app.use((req, res, next) => {
@@ -28,7 +43,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Internal Server Error. Please try again later.');
 });
 app.use((req, res) => {
-    res.status(404).send('404 Not Found');
+    res.status(404).json('404 Not Found');
 });
 
 app.listen(env.PORT, '0.0.0.0', () => {

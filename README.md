@@ -1,6 +1,6 @@
 # App Server
 
-A micro-api server for running small backend functions.
+This is the micro-api server I use for running small backend functions on my static sites.
 
 ## Getting Started
 

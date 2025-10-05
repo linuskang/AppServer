@@ -11,16 +11,15 @@ const auth = (req, res, next) => {
     const route = `${req.method} ${req.originalUrl}`;
 
     if (!token) {
-        log.warn(`${ip} - ${route}: No Token Provided`);
+        log.warn(`[auth] Missing token | IP=${ip} | Route=${route}`);
         return res.status(403).json({ message: 'Access Denied.' });
     }
-
     if (token !== `Bearer ${apiToken}`) {
-        log.warn(`${ip} - ${route}: Invalid API Token`);
-        return res.status(401).json({ message: 'Access Denied' });
+        log.warn(`[auth] Invalid token | IP=${ip} | Route=${route}`);
+        return res.status(401).json({ message: 'Access Denied.' });
     }
+    log.info(`[auth] ✅ Authorized | IP=${ip} | Route=${route}`);
 
-    log.info(`[auth] success on ${ip} - ${route}`);
     next();
 };
 

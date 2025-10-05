@@ -1,6 +1,6 @@
 {
   "name": "appserver",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Micro-api server for running small compute functions",
   "main": "App/app.js",
   "scripts": {

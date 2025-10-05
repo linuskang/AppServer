@@ -28,11 +28,14 @@ const services = require('../App Services/services');
 // Middleware and routes
 app.use(express.static(path.join(__dirname, 'App', 'Pub')));
 app.use(express.json());
-app.use((req, res, next) => {
-    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    log.info(`${ip} - ${req.method} ${req.url}`);
-    next();
-});
+app.use((req, res, next) =>
+    {
+        const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+        log.info(`[Request] ${req.method} ${req.originalUrl} from IP: ${ip}`);
+        log.info(`Headers: ${JSON.stringify(req.headers, null, 2)}`);
+        next();
+    }
+);
 app.use(staticRoutes);
 app.use(cors());
 app.use('/v1', apiRoutes);
